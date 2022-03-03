@@ -3,7 +3,7 @@
 
 int main()
 {
-  int s1[1001], s2[1001], i, ost, summ, degree, count;
+  int s1[1001], s2[1001], i, mod, summ, degree, count;
   count = 0;
   i = 0;
   while ((scanf("%d", &s1[i])) != EOF) {
@@ -18,9 +18,9 @@ int main()
     while (s1[j] != 0) {
       ost = s1[j] % 10;
       s1[j] = s1[j] / 10;
-      summ += ost * pow(2, degree);
+      summ +=  mod * pow(2, degree);
       degree++;
-      if (ost != 0 && ost != 1) {
+      if (mod != 0 && mod != 1) {
         count++;
       }
     }
