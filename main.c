@@ -16,7 +16,7 @@ int main()
     printf("%d\n", s1[j]);
     degree = 0;
     while (s1[j] != 0) {
-      ost = s1[j] % 10;
+      mod = s1[j] % 10;
       s1[j] = s1[j] / 10;
       summ +=  mod * pow(2, degree);
       degree++;
