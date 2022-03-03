@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include<malloc.h>
 int convert(int t){
   int i,d=0,last,no=0;
   for(i=0;t>0;i++){
@@ -13,7 +14,7 @@ int main(){
   int i, n,no=0,l;
   printf("количество чисел:\n");
   scanf("%d",&n);
-  int arr_two[n];
+  int *arr_two[n]=(int*)malloc(nof(int)*(n+1));
   printf("введите числа двоичной системы\n");
   for (i=0;i<n;i++){
     l=arr_two[i]%10;
@@ -28,13 +29,14 @@ int main(){
   else {
     printf("Множество в десятичной:\n");
     for (i=0;i<n;i++){
-      printf("%2d\n",arr_two[i]);
+      printf("%2d",arr_two[i]);
     }
     printf("\nМножество в двоичной:\n);
     for (i=0;i<n;i++){
-      printf("%2d\t",convert(arr_two[i]));
+      printf("%2d",convert(arr_two[i]));
     }
   }
+  free(arr_two);
   return 0;
 }
   
