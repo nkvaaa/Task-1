@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <math.h>
-#include<malloc.h>
+#include <malloc.h>
 int convert(int t){
-  int i,d=0,last,no=0;
+  int i,d=0,last;
   for(i=0;t>0;i++){
     last=t%10;
     d+=last*pow(2,i);
@@ -11,33 +11,22 @@ int convert(int t){
   return d;
 }
 int main(){
-  int i, n,no=0,l;
+  int i, n;
   printf("количество чисел:\n");
   scanf("%d",&n);
-  int *arr_two[n]=(int*)malloc(nof(int)*(n+1));
+  int *arr_two = (int*)malloc(n * sizeof(int));
   printf("введите числа двоичной системы\n");
   for (i=0;i<n;i++){
-    l=arr_two[i]%10;
-    if (l!=0&&l!=1){
-      no++;
-    }
     scanf("%d",&arr_two[i]);
   }
-  if(no!=0){
-      printf("Вы неправильно ввели числа");
-    }
-  else {
-    printf("Множество в десятичной:\n");
-    for (i=0;i<n;i++){
-      printf("%2d",arr_two[i]);
-    }
-    printf("\nМножество в двоичной:\n);
-    for (i=0;i<n;i++){
-      printf("%2d",convert(arr_two[i]));
-    }
+  printf("Множество в двоичной: \n");
+  for (i=0;i<n;i++){
+    printf("%d\n",arr_two[i]);
   }
-  free(arr_two);
+  printf("Множество в десятичной: \n");
+  for (i=0;i<n;i++){
+    printf("%d\n",convert(arr_two[i]));
+  }
   return 0;
+  free(arr_two);
 }
-  
-  
