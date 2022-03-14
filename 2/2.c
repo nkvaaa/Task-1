@@ -24,13 +24,13 @@ int main()
         if(arr[n-1]=='1'){
         if(count>0){
           printf("%d\n",n/(kstr+1)+1);
-          fprintf(g, "\"%d\"\n",  n/(kstr+1)+1);
+          fprintf(g, "%d \n",  n/(kstr+1)+1);
           break;
         }
         if(count==0){
           count++;
           printf("%d ",n/(kstr+1)+1);
-          fprintf(g, "\"%d\"-> ",  n/(kstr+1)+1);
+          fprintf(g, "%d -> ",  n/(kstr+1)+1);
         }
       }
       n+=kstr-1;
