@@ -5,7 +5,7 @@ int main()
     FILE *m, *g;
     int i=0,k=0,n=0,kstr=0,count;
     char arr[1001],s;
-    m = fopen("mgraph.txt", "r");
+    m = fopen("matrix_of_incendence181.txt", "r");
     while(!feof(m)){
       if(s=='0' || s=='1') {
         arr[i]=s;
@@ -24,13 +24,13 @@ int main()
         if(arr[n-1]=='1'){
         if(count>0){
           printf("%d\n",n/(kstr+1)+1);
-          fprintf(g, "\"%d\"\n",  n/(kstr+1)+1);
+          fprintf(g, "%d \n",  n/(kstr+1)+1);
           break;
         }
         if(count==0){
           count++;
           printf("%d ",n/(kstr+1)+1);
-          fprintf(g, "\"%d\"-> ",  n/(kstr+1)+1);
+          fprintf(g, "%d -> ",  n/(kstr+1)+1);
         }
       }
       n+=kstr-1;
