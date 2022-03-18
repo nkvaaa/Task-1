@@ -16,21 +16,21 @@ int main()
       }
       fscanf(m, "%c", &s);
     }
-    g = fopen("g.dot", "w");
-    fprintf(g, "digraph Grah {\n");
+    g = fopen("g.gv", "w");
+    fprintf(g, "graph Graph {\n");
     for(k=1;k<=kstr;k++){
       count=0;
       for(n=k;n<=i;n++){
         if(arr[n-1]=='1'){
         if(count>0){
           printf("%d\n",n/(kstr+1)+1);
-          fprintf(g, "%d \n",  n/(kstr+1)+1);
+          fprintf(g, "%d;\n",  n/(kstr+1)+1,k);
           break;
         }
         if(count==0){
           count++;
           printf("%d ",n/(kstr+1)+1);
-          fprintf(g, "%d -> ",  n/(kstr+1)+1);
+          fprintf(g, "%d--",  n/(kstr+1)+1);
         }
       }
       n+=kstr-1;
@@ -38,5 +38,7 @@ int main()
     }
     fprintf(g, "}");
     fclose(g);
+    system("dot g.gv -Tpng -o g.jpg");
+    system("g.jpg");
     return 0;
 }
